@@ -1,0 +1,41 @@
+\doxysection{bmp.\+h}
+\hypertarget{bmp_8h_source}{}\label{bmp_8h_source}\index{src/bmp.h@{src/bmp.h}}
+\mbox{\hyperlink{bmp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_BMP\_H\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_BMP\_H\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pixel_8h}{pixel.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classbit_map}{bitMap}}\{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a6cd2de6d9066db0c6007abb75c2d444e}{width}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a7652b9831255984dfaabd7fed9828357}{height}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_af2d76c93188f135d38233a3f9c41970a}{dpi}}\ =\ 150;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//Arrays\ Storing\ Binary\ Data}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classbit_map_a218fe71bcc403f6a2f98f6c0326c5f52}{header}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a1aa1ac5a986b0bcd95f53f5b3725bd06}{headerSize}}\ =\ 14;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classbit_map_a8fd777b96c32b3cdb1509f87e27e5b8d}{DIB}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a4ec23efea6c5453869f4814c19972069}{sizeDIB}}\ =\ 40;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classpixel}{pixel}}*\ \mbox{\hyperlink{classbit_map_abf950dcd43106b06020ba92924ffb9e5}{imageData}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classbit_map}{bitMap}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classbit_map_a6a1864c335dd190759951ad5ccb9621f}{\string~bitMap}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a465ab14ae4f78d82e951ab629bef34e8}{numPixels}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbit_map_ae45e2db73d229c1d0383ce918c4ace8a}{setColor}}(\textcolor{keywordtype}{int}\ pos,\ \mbox{\hyperlink{classpixel}{pixel}}\ color);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbit_map_a06b66be1dd4d72fb27bcb24c7772a5e7}{saveImage}}(std::string\ filename);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a5ef2fdf88114a26276a361a72d166fb1}{getHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classpixel}{pixel}}*\ \mbox{\hyperlink{classbit_map_a308da17408b07a4a156f7c0b588962cb}{getImageData}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_a0a367f4f9b84c034055ee954a304fb06}{getWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbit_map_a7bc0963a2b736f31e7c9fa5b52e83c46}{makeHeader}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classbit_map_a4d78a303c839dcaf007da021623523a4}{makeDIB}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classbit_map_a40b566706f07eddf689b98212f00cfed}{getByte}}(\textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_abe29842808b6d2956688a3a0a7be9222}{dpiToPPM}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classbit_map_af2d76c93188f135d38233a3f9c41970a}{dpi}});}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,339 @@
+\doxysection{bit\+Map Class Reference}
+\hypertarget{classbit_map}{}\label{classbit_map}\index{bitMap@{bitMap}}
+
+
+A class representing a bitmap image.  
+
+
+
+
+{\ttfamily \#include $<$bmp.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbit_map_a930705f4eac4ddc34aed527c6b96f6c1}{bit\+Map}} (int w, int h, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructor that creates a new bitmap object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classbit_map_a6a1864c335dd190759951ad5ccb9621f}{\texorpdfstring{$\sim$}{\string~}bit\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to delete the bitmap object. Frees memory allocated for header, DIB, and image data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classbit_map_a465ab14ae4f78d82e951ab629bef34e8}{num\+Pixels}} ()
+\begin{DoxyCompactList}\small\item\em Determine the number of pixels in the image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbit_map_ae45e2db73d229c1d0383ce918c4ace8a}{set\+Color}} (int pos, \mbox{\hyperlink{classpixel}{pixel}} color)
+\begin{DoxyCompactList}\small\item\em Set a pixel in the image to a specific color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbit_map_a06b66be1dd4d72fb27bcb24c7772a5e7}{save\+Image}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Save the image to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classbit_map_a5ef2fdf88114a26276a361a72d166fb1}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpixel}{pixel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbit_map_a308da17408b07a4a156f7c0b588962cb}{get\+Image\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Get the image data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classbit_map_a0a367f4f9b84c034055ee954a304fb06}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbit_map_a7bc0963a2b736f31e7c9fa5b52e83c46}{make\+Header}} ()
+\begin{DoxyCompactList}\small\item\em Make the file header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbit_map_a4d78a303c839dcaf007da021623523a4}{make\+DIB}} ()
+\begin{DoxyCompactList}\small\item\em Make the file DIB. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classbit_map_a40b566706f07eddf689b98212f00cfed}{get\+Byte}} (int value, int byte)
+\begin{DoxyCompactList}\small\item\em Get a specific byte out of an integer for making the header array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classbit_map_abe29842808b6d2956688a3a0a7be9222}{dpi\+To\+PPM}} (int \mbox{\hyperlink{classbit_map_af2d76c93188f135d38233a3f9c41970a}{dpi}})
+\begin{DoxyCompactList}\small\item\em Convert DPI to Pixels Per Meter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbit_map_a6cd2de6d9066db0c6007abb75c2d444e}{width}}
+\item 
+int \mbox{\hyperlink{classbit_map_a7652b9831255984dfaabd7fed9828357}{height}}
+\item 
+const int \mbox{\hyperlink{classbit_map_af2d76c93188f135d38233a3f9c41970a}{dpi}} = 150
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbit_map_a218fe71bcc403f6a2f98f6c0326c5f52}{header}}
+\item 
+const int \mbox{\hyperlink{classbit_map_a1aa1ac5a986b0bcd95f53f5b3725bd06}{header\+Size}} = 14
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbit_map_a8fd777b96c32b3cdb1509f87e27e5b8d}{DIB}}
+\item 
+const int \mbox{\hyperlink{classbit_map_a4ec23efea6c5453869f4814c19972069}{size\+DIB}} = 40
+\item 
+\mbox{\hyperlink{classpixel}{pixel}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classbit_map_abf950dcd43106b06020ba92924ffb9e5}{image\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a bitmap image. 
+
+This class contains an entire bitmap image. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classbit_map_a930705f4eac4ddc34aed527c6b96f6c1}\label{classbit_map_a930705f4eac4ddc34aed527c6b96f6c1} 
+\index{bitMap@{bitMap}!bitMap@{bitMap}}
+\index{bitMap@{bitMap}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{bitMap()}{bitMap()}}
+{\footnotesize\ttfamily bit\+Map\+::bit\+Map (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Constructor that creates a new bitmap object. 
+
+Create a new bitmap with the given size. 
+\begin{DoxyParams}{Parameters}
+{\em w} & is the width of the image \\
+\hline
+{\em h} & is the height of the image\\
+\hline
+{\em w} & Width of the image. \\
+\hline
+{\em h} & Height of the image. \\
+\hline
+{\em filename} & Name of the file to save the bitmap image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbit_map_a6a1864c335dd190759951ad5ccb9621f}\label{classbit_map_a6a1864c335dd190759951ad5ccb9621f} 
+\index{bitMap@{bitMap}!````~bitMap@{\texorpdfstring{$\sim$}{\string~}bitMap}}
+\index{````~bitMap@{\texorpdfstring{$\sim$}{\string~}bitMap}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}bitMap()}{\string~bitMap()}}
+{\footnotesize\ttfamily bit\+Map\+::\texorpdfstring{$\sim$}{\string~}bit\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor to delete the bitmap object. Frees memory allocated for header, DIB, and image data. 
+
+Delete the bitmap object 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classbit_map_abe29842808b6d2956688a3a0a7be9222}\label{classbit_map_abe29842808b6d2956688a3a0a7be9222} 
+\index{bitMap@{bitMap}!dpiToPPM@{dpiToPPM}}
+\index{dpiToPPM@{dpiToPPM}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{dpiToPPM()}{dpiToPPM()}}
+{\footnotesize\ttfamily int bit\+Map\+::dpi\+To\+PPM (\begin{DoxyParamCaption}\item[{int}]{dpi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Convert DPI to Pixels Per Meter. 
+
+Convert Dots Per Inch to Pixels Per Meter 
+\begin{DoxyParams}{Parameters}
+{\em dpi} & is the resolution in dpi \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resolution in ppm
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dpi} & Dots Per Inch value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pixels Per Meter. 
+\end{DoxyReturn}
+\Hypertarget{classbit_map_a40b566706f07eddf689b98212f00cfed}\label{classbit_map_a40b566706f07eddf689b98212f00cfed} 
+\index{bitMap@{bitMap}!getByte@{getByte}}
+\index{getByte@{getByte}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{getByte()}{getByte()}}
+{\footnotesize\ttfamily char bit\+Map\+::get\+Byte (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get a specific byte out of an integer for making the header array. 
+
+Given an integer, get a single byte from it 
+\begin{DoxyParams}{Parameters}
+{\em value} & is the original integer \\
+\hline
+{\em byte} & is the byte to read (0-\/3) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The byte selected
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Integer value to extract the byte from. \\
+\hline
+{\em byte} & The byte position to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted byte. 
+\end{DoxyReturn}
+\Hypertarget{classbit_map_a5ef2fdf88114a26276a361a72d166fb1}\label{classbit_map_a5ef2fdf88114a26276a361a72d166fb1} 
+\index{bitMap@{bitMap}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int bit\+Map\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the height of the image. 
+
+Save the image to a file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to write the data to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The height of the image. 
+\end{DoxyReturn}
+\Hypertarget{classbit_map_a308da17408b07a4a156f7c0b588962cb}\label{classbit_map_a308da17408b07a4a156f7c0b588962cb} 
+\index{bitMap@{bitMap}!getImageData@{getImageData}}
+\index{getImageData@{getImageData}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{getImageData()}{getImageData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpixel}{pixel}} \texorpdfstring{$\ast$}{*} bit\+Map\+::get\+Image\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the image data. 
+
+Save the image to a file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to write the data to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the array of pixel data. 
+\end{DoxyReturn}
+\Hypertarget{classbit_map_a0a367f4f9b84c034055ee954a304fb06}\label{classbit_map_a0a367f4f9b84c034055ee954a304fb06} 
+\index{bitMap@{bitMap}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int bit\+Map\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the width of the image. 
+
+\begin{DoxyReturn}{Returns}
+The width of the image. 
+\end{DoxyReturn}
+\Hypertarget{classbit_map_a4d78a303c839dcaf007da021623523a4}\label{classbit_map_a4d78a303c839dcaf007da021623523a4} 
+\index{bitMap@{bitMap}!makeDIB@{makeDIB}}
+\index{makeDIB@{makeDIB}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{makeDIB()}{makeDIB()}}
+{\footnotesize\ttfamily void bit\+Map\+::make\+DIB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Make the file DIB. 
+
+Generate a Bitmap DIB for this image \Hypertarget{classbit_map_a7bc0963a2b736f31e7c9fa5b52e83c46}\label{classbit_map_a7bc0963a2b736f31e7c9fa5b52e83c46} 
+\index{bitMap@{bitMap}!makeHeader@{makeHeader}}
+\index{makeHeader@{makeHeader}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{makeHeader()}{makeHeader()}}
+{\footnotesize\ttfamily void bit\+Map\+::make\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Make the file header. 
+
+Generate a Bitmap File Header for this Image \Hypertarget{classbit_map_a465ab14ae4f78d82e951ab629bef34e8}\label{classbit_map_a465ab14ae4f78d82e951ab629bef34e8} 
+\index{bitMap@{bitMap}!numPixels@{numPixels}}
+\index{numPixels@{numPixels}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{numPixels()}{numPixels()}}
+{\footnotesize\ttfamily int bit\+Map\+::num\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determine the number of pixels in the image. 
+
+Get the number of pixels in the image
+
+\begin{DoxyReturn}{Returns}
+The total number of pixels in the image. 
+\end{DoxyReturn}
+\Hypertarget{classbit_map_a06b66be1dd4d72fb27bcb24c7772a5e7}\label{classbit_map_a06b66be1dd4d72fb27bcb24c7772a5e7} 
+\index{bitMap@{bitMap}!saveImage@{saveImage}}
+\index{saveImage@{saveImage}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{saveImage()}{saveImage()}}
+{\footnotesize\ttfamily void bit\+Map\+::save\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Save the image to a file. 
+
+Save the image to a file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to write the data to\\
+\hline
+{\em filename} & Name of the file to save the image to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classbit_map_ae45e2db73d229c1d0383ce918c4ace8a}\label{classbit_map_ae45e2db73d229c1d0383ce918c4ace8a} 
+\index{bitMap@{bitMap}!setColor@{setColor}}
+\index{setColor@{setColor}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void bit\+Map\+::set\+Color (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{\mbox{\hyperlink{classpixel}{pixel}}}]{color }\end{DoxyParamCaption})}
+
+
+
+Set a pixel in the image to a specific color. 
+
+Set the color of a single pixel in the image 
+\begin{DoxyParams}{Parameters}
+{\em pos} & is the pixel to set the color for \\
+\hline
+{\em color} & is the color to set the pixel as\\
+\hline
+{\em pos} & Position of the pixel in the image data array. \\
+\hline
+{\em color} & The color to set the pixel to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classbit_map_a8fd777b96c32b3cdb1509f87e27e5b8d}\label{classbit_map_a8fd777b96c32b3cdb1509f87e27e5b8d} 
+\index{bitMap@{bitMap}!DIB@{DIB}}
+\index{DIB@{DIB}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{DIB}{DIB}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} bit\+Map\+::\+DIB\hspace{0.3cm}{\ttfamily [private]}}
+
+Storage for the Device Independent Bitmap Information \Hypertarget{classbit_map_af2d76c93188f135d38233a3f9c41970a}\label{classbit_map_af2d76c93188f135d38233a3f9c41970a} 
+\index{bitMap@{bitMap}!dpi@{dpi}}
+\index{dpi@{dpi}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{dpi}{dpi}}
+{\footnotesize\ttfamily const int bit\+Map\+::dpi = 150\hspace{0.3cm}{\ttfamily [private]}}
+
+Dots per inch of the Image \Hypertarget{classbit_map_a218fe71bcc403f6a2f98f6c0326c5f52}\label{classbit_map_a218fe71bcc403f6a2f98f6c0326c5f52} 
+\index{bitMap@{bitMap}!header@{header}}
+\index{header@{header}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} bit\+Map\+::header\hspace{0.3cm}{\ttfamily [private]}}
+
+Storage for the file header section \Hypertarget{classbit_map_a1aa1ac5a986b0bcd95f53f5b3725bd06}\label{classbit_map_a1aa1ac5a986b0bcd95f53f5b3725bd06} 
+\index{bitMap@{bitMap}!headerSize@{headerSize}}
+\index{headerSize@{headerSize}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{headerSize}{headerSize}}
+{\footnotesize\ttfamily const int bit\+Map\+::header\+Size = 14\hspace{0.3cm}{\ttfamily [private]}}
+
+Number of Bytes in header section \Hypertarget{classbit_map_a7652b9831255984dfaabd7fed9828357}\label{classbit_map_a7652b9831255984dfaabd7fed9828357} 
+\index{bitMap@{bitMap}!height@{height}}
+\index{height@{height}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int bit\+Map\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+Height of the Image \Hypertarget{classbit_map_abf950dcd43106b06020ba92924ffb9e5}\label{classbit_map_abf950dcd43106b06020ba92924ffb9e5} 
+\index{bitMap@{bitMap}!imageData@{imageData}}
+\index{imageData@{imageData}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{imageData}{imageData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpixel}{pixel}}\texorpdfstring{$\ast$}{*} bit\+Map\+::image\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+Array of Pixels in image \Hypertarget{classbit_map_a4ec23efea6c5453869f4814c19972069}\label{classbit_map_a4ec23efea6c5453869f4814c19972069} 
+\index{bitMap@{bitMap}!sizeDIB@{sizeDIB}}
+\index{sizeDIB@{sizeDIB}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{sizeDIB}{sizeDIB}}
+{\footnotesize\ttfamily const int bit\+Map\+::size\+DIB = 40\hspace{0.3cm}{\ttfamily [private]}}
+
+Number of Bytes in the DIB \Hypertarget{classbit_map_a6cd2de6d9066db0c6007abb75c2d444e}\label{classbit_map_a6cd2de6d9066db0c6007abb75c2d444e} 
+\index{bitMap@{bitMap}!width@{width}}
+\index{width@{width}!bitMap@{bitMap}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int bit\+Map\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+Width of the Image 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{bmp_8h}{bmp.\+h}}\item 
+src/\mbox{\hyperlink{bmp_8cpp}{bmp.\+cpp}}\end{DoxyCompactItemize}
